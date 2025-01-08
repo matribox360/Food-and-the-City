@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgis/postgis
+    restart: always
+    environment:
+        POSTGRES_USER: root
+        POSTGRES_PASSWORD: root
+        POSTGRES_DB: food-and-the-city
+    ports:
+        - 5432:5432
+    volumes:
+        - ./data/postgis:/var/lib/postgresql/data
+        - ./db/scripts/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+
+  api:
+    build:
+      context: ./api
+    restart: always
+    container_name: flask_api
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://root:root@db:5432/food-and-the-city
+
+volumes:
+  db_data:

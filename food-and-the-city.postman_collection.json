@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "9a6a78b9-f246-4481-9b2d-c2913da2158e",
+		"name": "food-and-the-city",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26557699",
+		"_collection_link": "https://victor-ksvsfv8267vz.postman.co/workspace/test~6e777852-8104-45c0-8d27-e2d04b8a36b4/collection/26557699-9a6a78b9-f246-4481-9b2d-c2913da2158e?action=share&source=collection_link&creator=26557699"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/movies?has_filming_location=true",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2010",
+							"disabled": true
+						},
+						{
+							"key": "director",
+							"value": "Nolan",
+							"disabled": true
+						},
+						{
+							"key": "has_filming_location",
+							"value": "true"
+						},
+						{
+							"key": "name",
+							"value": "Inception",
+							"disabled": true
+						},
+						{
+							"key": "actor",
+							"value": "Leonardo",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "Sci-fi",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/locations?suburb=Manhattan&city=City of New York&country_code=us",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"locations"
+					],
+					"query": [
+						{
+							"key": "suburb",
+							"value": "Manhattan"
+						},
+						{
+							"key": "city",
+							"value": "City of New York"
+						},
+						{
+							"key": "country_code",
+							"value": "us"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filming Location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/filming-locations?actor=Robert&genre=Sci-fi&imdb_id=123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"filming-locations"
+					],
+					"query": [
+						{
+							"key": "actor",
+							"value": "Robert"
+						},
+						{
+							"key": "genre",
+							"value": "Sci-fi"
+						},
+						{
+							"key": "imdb_id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/restaurants?nearby_filming_location=123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"restaurants"
+					],
+					"query": [
+						{
+							"key": "nearby_filming_location",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Restaurant Nearby By Filming Locations Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/restaurants?nearby_filming_location=123",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "nearby_filming_location",
+									"value": "123"
+								},
+								{
+									"key": "latitude",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "longitude",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "distance",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Ger Restaurant Nearby By Lat/Lon",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/v1/restaurants?latitude=40.7680741&longitude=-73.98189469659101&distance=1000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "40.7680741"
+								},
+								{
+									"key": "longitude",
+									"value": "-73.98189469659101"
+								},
+								{
+									"key": "distance",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Itinaries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/itineraries?distance=300&imdb_ids=tt0087332,tt0119654",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"itineraries"
+					],
+					"query": [
+						{
+							"key": "distance",
+							"value": "300"
+						},
+						{
+							"key": "imdb_ids",
+							"value": "tt0087332,tt0119654"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/v1/metadata",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "5000",
+					"path": ["api", "v1", "metadata"]
+				}
+			},
+			"response": []
+		}	
+	]
+}

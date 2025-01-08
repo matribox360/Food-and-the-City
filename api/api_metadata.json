@@ -1,0 +1,44 @@
+{
+  "api_metadata": {
+    "authors": [
+      "Danilo Heyer",
+      "Yaelle Ben Hamou"
+    ],
+    "description": "The Food and the City API provides a centralized access point to explore filming locations in New York, restaurant data from New York, and movie-related metadata.",
+    "sources": [
+      {
+        "name": "Filming Locations (Scenes from the City)",
+        "url": "https://data.cityofnewyork.us/Business/Filming-Locations-Scenes-from-the-City-/qb3k-n8mm/about_data",
+        "type": "Local file",
+        "file_name": "Interactive_Map_Data.xml",
+        "read_methods": "Pandas CSV read",
+        "retrieval_date": "2025-01-01",
+        "last_update": "2018-10-09",
+        "description": "Filming locations from the city of New York.",
+        "processing": "Data loaded from a local CSV file using Pandas. Cleaned by removing invalid geographical coordinates. Geocoded using Geopy to ensure correct adresses. Renamed columns to align with the database schema and added calculated geographic fields for PostgreSQL."
+      },
+      {
+        "name": "Open Restaurant Applications (Historic)",
+        "url": "https://data.cityofnewyork.us/Transportation/Open-Restaurant-Applications-Historic-/pitm-atqc/about_data",
+        "type": "Online",
+        "read_methods": "Socrata API",
+        "retrieval_date": "2025-01-02",
+        "last_update": "2023-08-03",
+        "description": "Restaurant permits in the city of New York, including historical data.",
+        "processing": "Data retrieved via the Socrata API. Cleaned to remove null addresses and inconsistent formatting. Geocoded using Geopy to ensure correct adresses. Renamed columns for consistency with the database schema."
+      },
+      {
+        "name": "25k IMDb Movies Dataset",
+        "url": "https://www.kaggle.com/datasets/utsh0dey/25k-movie-dataset",
+        "type": "Online",
+        "read_methods": "Kaggle API",
+        "retrieval_date": "2025-01-03",
+        "last_update": "2023",
+        "description": "Information about movies, actors, genres, and ratings found on IMDb.",
+        "processing": "Data fetched using the Kaggle API and imported as a Pandas DataFrame. Cleaned by removing duplicates and inconsistent records. Movies linked to actors and genres through normalized relationships. Renamed columns for database compatibility."
+      }
+    ],
+    "api_last_update": "2025-01-04",
+    "notes": "This API integrates and processes data from multiple sources for film-related insights and geographical data. It uses SRID 4326 for geospatial data handling."
+  }
+}

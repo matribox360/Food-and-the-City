@@ -1,0 +1,7 @@
+pandas
+sodapy
+python-dotenv
+kagglehub
+geopy
+SQLAlchemy
+psycopg2-binary
